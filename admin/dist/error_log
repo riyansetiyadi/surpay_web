@@ -1,0 +1,54 @@
+[03-Oct-2024 15:28:55 UTC] PHP Warning:  Undefined array key "shift" in /home/surpayid/public_html/admin/dist/login.php on line 52
+[03-Oct-2024 15:28:55 UTC] PHP Warning:  Undefined array key "dokter_rawat" in /home/surpayid/public_html/admin/dist/login.php on line 54
+[03-Oct-2024 15:28:59 UTC] PHP Warning:  Undefined array key "shift" in /home/surpayid/public_html/admin/dist/login.php on line 52
+[03-Oct-2024 15:28:59 UTC] PHP Warning:  Undefined array key "dokter_rawat" in /home/surpayid/public_html/admin/dist/login.php on line 54
+[03-Oct-2024 22:29:52 Asia/Jakarta] PHP Warning:  Undefined array key "umur" in /home/surpayid/public_html/admin/dist/data/datauser.php on line 65
+[03-Oct-2024 22:29:52 Asia/Jakarta] PHP Warning:  Undefined array key "jenis_kelamin" in /home/surpayid/public_html/admin/dist/data/datauser.php on line 66
+[03-Oct-2024 15:30:16 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Field 'foto' doesn't have a default value in /home/surpayid/public_html/admin/dist/registrasi.php:207
+Stack trace:
+#0 /home/surpayid/public_html/admin/dist/registrasi.php(207): mysqli->query()
+#1 {main}
+  thrown in /home/surpayid/public_html/admin/dist/registrasi.php on line 207
+[03-Oct-2024 15:30:24 UTC] PHP Warning:  Undefined array key "shift" in /home/surpayid/public_html/admin/dist/login.php on line 52
+[03-Oct-2024 15:30:24 UTC] PHP Warning:  Undefined array key "dokter_rawat" in /home/surpayid/public_html/admin/dist/login.php on line 54
+[03-Oct-2024 15:30:28 UTC] PHP Warning:  Undefined array key "shift" in /home/surpayid/public_html/admin/dist/login.php on line 52
+[03-Oct-2024 15:30:28 UTC] PHP Warning:  Undefined array key "dokter_rawat" in /home/surpayid/public_html/admin/dist/login.php on line 54
+[03-Oct-2024 15:30:42 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Field 'foto' doesn't have a default value in /home/surpayid/public_html/admin/dist/registrasi.php:207
+Stack trace:
+#0 /home/surpayid/public_html/admin/dist/registrasi.php(207): mysqli->query()
+#1 {main}
+  thrown in /home/surpayid/public_html/admin/dist/registrasi.php on line 207
+[03-Oct-2024 22:30:53 Asia/Jakarta] PHP Warning:  Undefined array key "umur" in /home/surpayid/public_html/admin/dist/data/datauser.php on line 65
+[03-Oct-2024 22:30:53 Asia/Jakarta] PHP Warning:  Undefined array key "jenis_kelamin" in /home/surpayid/public_html/admin/dist/data/datauser.php on line 66
+[03-Oct-2024 15:31:05 UTC] PHP Warning:  Undefined array key "shift" in /home/surpayid/public_html/admin/dist/login.php on line 52
+[03-Oct-2024 15:31:05 UTC] PHP Warning:  Undefined array key "dokter_rawat" in /home/surpayid/public_html/admin/dist/login.php on line 54
+[03-Oct-2024 15:31:08 UTC] PHP Warning:  Undefined array key "shift" in /home/surpayid/public_html/admin/dist/login.php on line 52
+[03-Oct-2024 15:31:08 UTC] PHP Warning:  Undefined array key "dokter_rawat" in /home/surpayid/public_html/admin/dist/login.php on line 54
+[03-Oct-2024 15:31:12 UTC] PHP Warning:  Undefined array key "shift" in /home/surpayid/public_html/admin/dist/login.php on line 52
+[03-Oct-2024 15:31:12 UTC] PHP Warning:  Undefined array key "dokter_rawat" in /home/surpayid/public_html/admin/dist/login.php on line 54
+[14-Nov-2024 07:53:45 Asia/Jakarta] PHP Warning:  Undefined array key "shift" in /home/surpayid/public_html/admin/dist/login.php on line 52
+[14-Nov-2024 07:53:45 Asia/Jakarta] PHP Warning:  Undefined array key "dokter_rawat" in /home/surpayid/public_html/admin/dist/login.php on line 54
+[14-Nov-2024 07:56:23 Asia/Jakarta] PHP Warning:  Undefined array key "umur" in /home/surpayid/public_html/admin/dist/data/datauser.php on line 65
+[14-Nov-2024 07:56:23 Asia/Jakarta] PHP Warning:  Undefined array key "jenis_kelamin" in /home/surpayid/public_html/admin/dist/data/datauser.php on line 66
+[14-Nov-2024 08:36:29 Asia/Jakarta] PHP Warning:  Undefined array key "admin" in /home/surpayid/public_html/admin/dist/index.php on line 16
+[14-Nov-2024 08:36:29 Asia/Jakarta] PHP Warning:  Trying to access array offset on null in /home/surpayid/public_html/admin/dist/index.php on line 16
+[14-Nov-2024 08:36:29 Asia/Jakarta] PHP Warning:  Undefined array key "admin" in /home/surpayid/public_html/admin/dist/index.php on line 17
+[14-Nov-2024 08:36:29 Asia/Jakarta] PHP Warning:  Trying to access array offset on null in /home/surpayid/public_html/admin/dist/index.php on line 17
+[14-Nov-2024 08:36:38 Asia/Jakarta] PHP Warning:  Undefined array key "shift" in /home/surpayid/public_html/admin/dist/login.php on line 52
+[14-Nov-2024 08:36:38 Asia/Jakarta] PHP Warning:  Undefined array key "dokter_rawat" in /home/surpayid/public_html/admin/dist/login.php on line 54
+[14-Nov-2024 08:36:57 Asia/Jakarta] PHP Warning:  Undefined array key "shift" in /home/surpayid/public_html/admin/dist/login.php on line 52
+[14-Nov-2024 08:36:57 Asia/Jakarta] PHP Warning:  Undefined array key "dokter_rawat" in /home/surpayid/public_html/admin/dist/login.php on line 54
+[14-Nov-2024 08:37:09 Asia/Jakarta] PHP Warning:  Undefined array key "shift" in /home/surpayid/public_html/admin/dist/login.php on line 52
+[14-Nov-2024 08:37:09 Asia/Jakarta] PHP Warning:  Undefined array key "dokter_rawat" in /home/surpayid/public_html/admin/dist/login.php on line 54
+[14-Nov-2024 08:40:57 Asia/Jakarta] PHP Warning:  Undefined array key "umur" in /home/surpayid/public_html/admin/dist/data/datauser.php on line 65
+[14-Nov-2024 08:40:57 Asia/Jakarta] PHP Warning:  Undefined array key "jenis_kelamin" in /home/surpayid/public_html/admin/dist/data/datauser.php on line 66
+[14-Nov-2024 08:41:21 Asia/Jakarta] PHP Warning:  Undefined array key "umur" in /home/surpayid/public_html/admin/dist/data/datauser.php on line 65
+[14-Nov-2024 08:41:21 Asia/Jakarta] PHP Warning:  Undefined array key "jenis_kelamin" in /home/surpayid/public_html/admin/dist/data/datauser.php on line 66
+[14-Nov-2024 08:41:22 Asia/Jakarta] PHP Warning:  Undefined array key "umur" in /home/surpayid/public_html/admin/dist/data/datauser.php on line 65
+[14-Nov-2024 08:41:22 Asia/Jakarta] PHP Warning:  Undefined array key "jenis_kelamin" in /home/surpayid/public_html/admin/dist/data/datauser.php on line 66
+[14-Nov-2024 08:41:23 Asia/Jakarta] PHP Warning:  Undefined array key "umur" in /home/surpayid/public_html/admin/dist/data/datauser.php on line 65
+[14-Nov-2024 08:41:23 Asia/Jakarta] PHP Warning:  Undefined array key "jenis_kelamin" in /home/surpayid/public_html/admin/dist/data/datauser.php on line 66
+[14-Nov-2024 08:41:25 Asia/Jakarta] PHP Warning:  Undefined array key "umur" in /home/surpayid/public_html/admin/dist/data/datauser.php on line 65
+[14-Nov-2024 08:41:25 Asia/Jakarta] PHP Warning:  Undefined array key "jenis_kelamin" in /home/surpayid/public_html/admin/dist/data/datauser.php on line 66
+[14-Nov-2024 08:41:49 Asia/Jakarta] PHP Warning:  Undefined array key "umur" in /home/surpayid/public_html/admin/dist/data/datauser.php on line 65
+[14-Nov-2024 08:41:49 Asia/Jakarta] PHP Warning:  Undefined array key "jenis_kelamin" in /home/surpayid/public_html/admin/dist/data/datauser.php on line 66

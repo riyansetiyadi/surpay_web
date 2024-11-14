@@ -1,0 +1,215 @@
+[31-Jul-2024 03:29:42 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/surpayid/public_html/admin/dist/function.php:6) in /home/surpayid/public_html/user/login.php on line 86
+[31-Jul-2024 03:29:42 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/surpayid/public_html/admin/dist/function.php:6) in /home/surpayid/public_html/user/login.php on line 87
+[31-Jul-2024 03:29:42 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/surpayid/public_html/admin/dist/function.php:6) in /home/surpayid/public_html/user/login.php on line 88
+[31-Jul-2024 10:30:21 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on bool in /home/surpayid/public_html/user/hadiah/tarik.php:15
+Stack trace:
+#0 /home/surpayid/public_html/user/listhalamanuser.php(14): include()
+#1 /home/surpayid/public_html/user/index.php(65): include('/home/surpayid/...')
+#2 {main}
+  thrown in /home/surpayid/public_html/user/hadiah/tarik.php on line 15
+[31-Jul-2024 05:16:22 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/surpayid/public_html/admin/dist/function.php:6) in /home/surpayid/public_html/user/login.php on line 86
+[31-Jul-2024 05:16:22 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/surpayid/public_html/admin/dist/function.php:6) in /home/surpayid/public_html/user/login.php on line 87
+[31-Jul-2024 05:16:22 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/surpayid/public_html/admin/dist/function.php:6) in /home/surpayid/public_html/user/login.php on line 88
+[03-Aug-2024 03:41:42 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/surpayid/public_html/admin/dist/function.php:6) in /home/surpayid/public_html/user/login.php on line 86
+[03-Aug-2024 03:41:42 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/surpayid/public_html/admin/dist/function.php:6) in /home/surpayid/public_html/user/login.php on line 87
+[03-Aug-2024 03:41:42 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/surpayid/public_html/admin/dist/function.php:6) in /home/surpayid/public_html/user/login.php on line 88
+[03-Aug-2024 23:59:07 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/surpayid/public_html/admin/dist/function.php:6) in /home/surpayid/public_html/user/login.php on line 86
+[03-Aug-2024 23:59:07 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/surpayid/public_html/admin/dist/function.php:6) in /home/surpayid/public_html/user/login.php on line 87
+[03-Aug-2024 23:59:07 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/surpayid/public_html/admin/dist/function.php:6) in /home/surpayid/public_html/user/login.php on line 88
+[21-Aug-2024 00:07:01 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/surpayid/public_html/admin/dist/function.php:6) in /home/surpayid/public_html/user/login.php on line 86
+[21-Aug-2024 00:07:01 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/surpayid/public_html/admin/dist/function.php:6) in /home/surpayid/public_html/user/login.php on line 87
+[21-Aug-2024 00:07:01 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/surpayid/public_html/admin/dist/function.php:6) in /home/surpayid/public_html/user/login.php on line 88
+[21-Aug-2024 03:02:17 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/surpayid/public_html/admin/dist/function.php:6) in /home/surpayid/public_html/user/login.php on line 86
+[21-Aug-2024 03:02:17 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/surpayid/public_html/admin/dist/function.php:6) in /home/surpayid/public_html/user/login.php on line 87
+[21-Aug-2024 03:02:17 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/surpayid/public_html/admin/dist/function.php:6) in /home/surpayid/public_html/user/login.php on line 88
+[09-Sep-2024 08:49:20 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/surpayid/public_html/admin/dist/function.php:6) in /home/surpayid/public_html/user/login.php on line 86
+[09-Sep-2024 08:49:20 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/surpayid/public_html/admin/dist/function.php:6) in /home/surpayid/public_html/user/login.php on line 87
+[09-Sep-2024 08:49:20 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/surpayid/public_html/admin/dist/function.php:6) in /home/surpayid/public_html/user/login.php on line 88
+[09-Sep-2024 08:49:38 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/surpayid/public_html/admin/dist/function.php:6) in /home/surpayid/public_html/user/login.php on line 86
+[09-Sep-2024 08:49:38 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/surpayid/public_html/admin/dist/function.php:6) in /home/surpayid/public_html/user/login.php on line 87
+[09-Sep-2024 08:49:38 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/surpayid/public_html/admin/dist/function.php:6) in /home/surpayid/public_html/user/login.php on line 88
+[09-Sep-2024 08:49:42 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/surpayid/public_html/admin/dist/function.php:6) in /home/surpayid/public_html/user/login.php on line 86
+[09-Sep-2024 08:49:42 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/surpayid/public_html/admin/dist/function.php:6) in /home/surpayid/public_html/user/login.php on line 87
+[09-Sep-2024 08:49:42 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/surpayid/public_html/admin/dist/function.php:6) in /home/surpayid/public_html/user/login.php on line 88
+[09-Sep-2024 14:10:32 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/surpayid/public_html/admin/dist/function.php:6) in /home/surpayid/public_html/user/login.php on line 86
+[09-Sep-2024 14:10:32 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/surpayid/public_html/admin/dist/function.php:6) in /home/surpayid/public_html/user/login.php on line 87
+[09-Sep-2024 14:10:32 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/surpayid/public_html/admin/dist/function.php:6) in /home/surpayid/public_html/user/login.php on line 88
+[09-Sep-2024 14:12:33 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/surpayid/public_html/admin/dist/function.php:6) in /home/surpayid/public_html/user/login.php on line 86
+[09-Sep-2024 14:12:33 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/surpayid/public_html/admin/dist/function.php:6) in /home/surpayid/public_html/user/login.php on line 87
+[09-Sep-2024 14:12:33 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/surpayid/public_html/admin/dist/function.php:6) in /home/surpayid/public_html/user/login.php on line 88
+[09-Sep-2024 14:12:57 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/surpayid/public_html/admin/dist/function.php:6) in /home/surpayid/public_html/user/login.php on line 86
+[09-Sep-2024 14:12:57 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/surpayid/public_html/admin/dist/function.php:6) in /home/surpayid/public_html/user/login.php on line 87
+[09-Sep-2024 14:12:57 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/surpayid/public_html/admin/dist/function.php:6) in /home/surpayid/public_html/user/login.php on line 88
+[09-Sep-2024 14:14:31 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/surpayid/public_html/admin/dist/function.php:6) in /home/surpayid/public_html/user/login.php on line 86
+[09-Sep-2024 14:14:31 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/surpayid/public_html/admin/dist/function.php:6) in /home/surpayid/public_html/user/login.php on line 87
+[09-Sep-2024 14:14:31 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/surpayid/public_html/admin/dist/function.php:6) in /home/surpayid/public_html/user/login.php on line 88
+[09-Sep-2024 14:28:11 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/surpayid/public_html/admin/dist/function.php:6) in /home/surpayid/public_html/user/login.php on line 86
+[09-Sep-2024 14:28:11 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/surpayid/public_html/admin/dist/function.php:6) in /home/surpayid/public_html/user/login.php on line 87
+[09-Sep-2024 14:28:11 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/surpayid/public_html/admin/dist/function.php:6) in /home/surpayid/public_html/user/login.php on line 88
+[09-Sep-2024 14:28:25 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/surpayid/public_html/admin/dist/function.php:6) in /home/surpayid/public_html/user/login.php on line 86
+[09-Sep-2024 14:28:25 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/surpayid/public_html/admin/dist/function.php:6) in /home/surpayid/public_html/user/login.php on line 87
+[09-Sep-2024 14:28:25 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/surpayid/public_html/admin/dist/function.php:6) in /home/surpayid/public_html/user/login.php on line 88
+[09-Sep-2024 14:28:46 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/surpayid/public_html/admin/dist/function.php:6) in /home/surpayid/public_html/user/login.php on line 86
+[09-Sep-2024 14:28:46 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/surpayid/public_html/admin/dist/function.php:6) in /home/surpayid/public_html/user/login.php on line 87
+[09-Sep-2024 14:28:46 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/surpayid/public_html/admin/dist/function.php:6) in /home/surpayid/public_html/user/login.php on line 88
+[09-Sep-2024 14:30:41 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/surpayid/public_html/admin/dist/function.php:6) in /home/surpayid/public_html/user/login.php on line 86
+[09-Sep-2024 14:30:41 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/surpayid/public_html/admin/dist/function.php:6) in /home/surpayid/public_html/user/login.php on line 87
+[09-Sep-2024 14:30:41 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/surpayid/public_html/admin/dist/function.php:6) in /home/surpayid/public_html/user/login.php on line 88
+[09-Sep-2024 14:30:47 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/surpayid/public_html/admin/dist/function.php:6) in /home/surpayid/public_html/user/login.php on line 86
+[09-Sep-2024 14:30:47 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/surpayid/public_html/admin/dist/function.php:6) in /home/surpayid/public_html/user/login.php on line 87
+[09-Sep-2024 14:30:47 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/surpayid/public_html/admin/dist/function.php:6) in /home/surpayid/public_html/user/login.php on line 88
+[11-Sep-2024 00:59:35 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/surpayid/public_html/admin/dist/function.php:6) in /home/surpayid/public_html/user/login.php on line 86
+[11-Sep-2024 00:59:35 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/surpayid/public_html/admin/dist/function.php:6) in /home/surpayid/public_html/user/login.php on line 87
+[11-Sep-2024 00:59:35 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/surpayid/public_html/admin/dist/function.php:6) in /home/surpayid/public_html/user/login.php on line 88
+[11-Sep-2024 07:59:35 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on bool in /home/surpayid/public_html/user/utama/utama.php:52
+Stack trace:
+#0 /home/surpayid/public_html/user/listhalamanuser.php(18): include()
+#1 /home/surpayid/public_html/user/index.php(96): include('/home/surpayid/...')
+#2 {main}
+  thrown in /home/surpayid/public_html/user/utama/utama.php on line 52
+[11-Sep-2024 00:59:58 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/surpayid/public_html/admin/dist/function.php:6) in /home/surpayid/public_html/user/login.php on line 86
+[11-Sep-2024 00:59:58 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/surpayid/public_html/admin/dist/function.php:6) in /home/surpayid/public_html/user/login.php on line 87
+[11-Sep-2024 00:59:58 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/surpayid/public_html/admin/dist/function.php:6) in /home/surpayid/public_html/user/login.php on line 88
+[11-Sep-2024 07:59:58 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on bool in /home/surpayid/public_html/user/utama/utama.php:52
+Stack trace:
+#0 /home/surpayid/public_html/user/listhalamanuser.php(18): include()
+#1 /home/surpayid/public_html/user/index.php(96): include('/home/surpayid/...')
+#2 {main}
+  thrown in /home/surpayid/public_html/user/utama/utama.php on line 52
+[11-Sep-2024 08:00:00 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on bool in /home/surpayid/public_html/user/utama/utama.php:52
+Stack trace:
+#0 /home/surpayid/public_html/user/listhalamanuser.php(18): include()
+#1 /home/surpayid/public_html/user/index.php(96): include('/home/surpayid/...')
+#2 {main}
+  thrown in /home/surpayid/public_html/user/utama/utama.php on line 52
+[11-Sep-2024 08:00:02 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on bool in /home/surpayid/public_html/user/utama/utama.php:52
+Stack trace:
+#0 /home/surpayid/public_html/user/listhalamanuser.php(18): include()
+#1 /home/surpayid/public_html/user/index.php(96): include('/home/surpayid/...')
+#2 {main}
+  thrown in /home/surpayid/public_html/user/utama/utama.php on line 52
+[11-Sep-2024 08:02:17 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on bool in /home/surpayid/public_html/user/utama/utama.php:52
+Stack trace:
+#0 /home/surpayid/public_html/user/listhalamanuser.php(18): include()
+#1 /home/surpayid/public_html/user/index.php(96): include('/home/surpayid/...')
+#2 {main}
+  thrown in /home/surpayid/public_html/user/utama/utama.php on line 52
+[11-Sep-2024 08:02:17 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on bool in /home/surpayid/public_html/user/utama/utama.php:52
+Stack trace:
+#0 /home/surpayid/public_html/user/listhalamanuser.php(18): include()
+#1 /home/surpayid/public_html/user/index.php(96): include('/home/surpayid/...')
+#2 {main}
+  thrown in /home/surpayid/public_html/user/utama/utama.php on line 52
+[11-Sep-2024 01:02:57 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/surpayid/public_html/admin/dist/function.php:6) in /home/surpayid/public_html/user/login.php on line 86
+[11-Sep-2024 01:02:57 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/surpayid/public_html/admin/dist/function.php:6) in /home/surpayid/public_html/user/login.php on line 87
+[11-Sep-2024 01:02:57 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/surpayid/public_html/admin/dist/function.php:6) in /home/surpayid/public_html/user/login.php on line 88
+[11-Sep-2024 08:02:57 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on bool in /home/surpayid/public_html/user/utama/utama.php:52
+Stack trace:
+#0 /home/surpayid/public_html/user/listhalamanuser.php(18): include()
+#1 /home/surpayid/public_html/user/index.php(96): include('/home/surpayid/...')
+#2 {main}
+  thrown in /home/surpayid/public_html/user/utama/utama.php on line 52
+[11-Sep-2024 08:04:21 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on bool in /home/surpayid/public_html/user/utama/utama.php:52
+Stack trace:
+#0 /home/surpayid/public_html/user/listhalamanuser.php(18): include()
+#1 /home/surpayid/public_html/user/index.php(96): include('/home/surpayid/...')
+#2 {main}
+  thrown in /home/surpayid/public_html/user/utama/utama.php on line 52
+[11-Sep-2024 08:04:31 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on bool in /home/surpayid/public_html/user/utama/utama.php:52
+Stack trace:
+#0 /home/surpayid/public_html/user/listhalamanuser.php(18): include()
+#1 /home/surpayid/public_html/user/index.php(96): include('/home/surpayid/...')
+#2 {main}
+  thrown in /home/surpayid/public_html/user/utama/utama.php on line 52
+[11-Sep-2024 01:04:40 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/surpayid/public_html/admin/dist/function.php:6) in /home/surpayid/public_html/user/login.php on line 86
+[11-Sep-2024 01:04:40 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/surpayid/public_html/admin/dist/function.php:6) in /home/surpayid/public_html/user/login.php on line 87
+[11-Sep-2024 01:04:40 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/surpayid/public_html/admin/dist/function.php:6) in /home/surpayid/public_html/user/login.php on line 88
+[11-Sep-2024 08:04:40 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on bool in /home/surpayid/public_html/user/utama/utama.php:52
+Stack trace:
+#0 /home/surpayid/public_html/user/listhalamanuser.php(18): include()
+#1 /home/surpayid/public_html/user/index.php(96): include('/home/surpayid/...')
+#2 {main}
+  thrown in /home/surpayid/public_html/user/utama/utama.php on line 52
+[11-Sep-2024 08:04:42 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on bool in /home/surpayid/public_html/user/utama/utama.php:52
+Stack trace:
+#0 /home/surpayid/public_html/user/listhalamanuser.php(18): include()
+#1 /home/surpayid/public_html/user/index.php(96): include('/home/surpayid/...')
+#2 {main}
+  thrown in /home/surpayid/public_html/user/utama/utama.php on line 52
+[11-Sep-2024 01:11:36 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/surpayid/public_html/admin/dist/function.php:6) in /home/surpayid/public_html/user/login.php on line 86
+[11-Sep-2024 01:11:36 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/surpayid/public_html/admin/dist/function.php:6) in /home/surpayid/public_html/user/login.php on line 87
+[11-Sep-2024 01:11:36 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/surpayid/public_html/admin/dist/function.php:6) in /home/surpayid/public_html/user/login.php on line 88
+[11-Sep-2024 01:11:40 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/surpayid/public_html/admin/dist/function.php:6) in /home/surpayid/public_html/user/login.php on line 86
+[11-Sep-2024 01:11:40 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/surpayid/public_html/admin/dist/function.php:6) in /home/surpayid/public_html/user/login.php on line 87
+[11-Sep-2024 01:11:40 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/surpayid/public_html/admin/dist/function.php:6) in /home/surpayid/public_html/user/login.php on line 88
+[13-Sep-2024 23:55:15 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/surpayid/public_html/admin/dist/function.php:6) in /home/surpayid/public_html/user/login.php on line 86
+[13-Sep-2024 23:55:15 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/surpayid/public_html/admin/dist/function.php:6) in /home/surpayid/public_html/user/login.php on line 87
+[13-Sep-2024 23:55:15 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/surpayid/public_html/admin/dist/function.php:6) in /home/surpayid/public_html/user/login.php on line 88
+[14-Sep-2024 00:11:49 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/surpayid/public_html/admin/dist/function.php:6) in /home/surpayid/public_html/user/login.php on line 86
+[14-Sep-2024 00:11:49 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/surpayid/public_html/admin/dist/function.php:6) in /home/surpayid/public_html/user/login.php on line 87
+[14-Sep-2024 00:11:49 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/surpayid/public_html/admin/dist/function.php:6) in /home/surpayid/public_html/user/login.php on line 88
+[15-Sep-2024 02:20:33 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/surpayid/public_html/admin/dist/function.php:6) in /home/surpayid/public_html/user/login.php on line 86
+[15-Sep-2024 02:20:33 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/surpayid/public_html/admin/dist/function.php:6) in /home/surpayid/public_html/user/login.php on line 87
+[15-Sep-2024 02:20:33 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/surpayid/public_html/admin/dist/function.php:6) in /home/surpayid/public_html/user/login.php on line 88
+[15-Sep-2024 02:20:33 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/surpayid/public_html/admin/dist/function.php:6) in /home/surpayid/public_html/user/login.php on line 86
+[15-Sep-2024 02:20:33 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/surpayid/public_html/admin/dist/function.php:6) in /home/surpayid/public_html/user/login.php on line 87
+[15-Sep-2024 02:20:33 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/surpayid/public_html/admin/dist/function.php:6) in /home/surpayid/public_html/user/login.php on line 88
+[16-Sep-2024 04:42:55 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/surpayid/public_html/admin/dist/function.php:6) in /home/surpayid/public_html/user/login.php on line 86
+[16-Sep-2024 04:42:55 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/surpayid/public_html/admin/dist/function.php:6) in /home/surpayid/public_html/user/login.php on line 87
+[16-Sep-2024 04:42:55 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/surpayid/public_html/admin/dist/function.php:6) in /home/surpayid/public_html/user/login.php on line 88
+[10-Oct-2024 08:32:06 UTC] PHP Warning:  Undefined array key "tgl_lahir" in /home/surpayid/public_html/user/register.php on line 345
+[10-Oct-2024 08:32:06 UTC] PHP Warning:  Undefined variable $umur2 in /home/surpayid/public_html/user/register.php on line 366
+[10-Oct-2024 08:32:06 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'nama' in 'field list' in /home/surpayid/public_html/user/register.php:378
+Stack trace:
+#0 /home/surpayid/public_html/user/register.php(378): mysqli->query()
+#1 {main}
+  thrown in /home/surpayid/public_html/user/register.php on line 378
+[14-Oct-2024 02:20:38 UTC] PHP Warning:  Undefined array key "tgl_lahir" in /home/surpayid/public_html/user/register.php on line 345
+[14-Oct-2024 02:20:38 UTC] PHP Warning:  Undefined variable $umur2 in /home/surpayid/public_html/user/register.php on line 366
+[14-Oct-2024 02:20:38 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'nama' in 'field list' in /home/surpayid/public_html/user/register.php:378
+Stack trace:
+#0 /home/surpayid/public_html/user/register.php(378): mysqli->query()
+#1 {main}
+  thrown in /home/surpayid/public_html/user/register.php on line 378
+[28-Oct-2024 07:39:46 UTC] PHP Warning:  Undefined array key "tgl_lahir" in /home/surpayid/public_html/user/register.php on line 345
+[28-Oct-2024 07:39:46 UTC] PHP Warning:  Undefined variable $umur2 in /home/surpayid/public_html/user/register.php on line 366
+[28-Oct-2024 07:39:46 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'nama' in 'field list' in /home/surpayid/public_html/user/register.php:378
+Stack trace:
+#0 /home/surpayid/public_html/user/register.php(378): mysqli->query()
+#1 {main}
+  thrown in /home/surpayid/public_html/user/register.php on line 378
+[30-Oct-2024 03:36:10 UTC] PHP Warning:  Undefined array key "tgl_lahir" in /home/surpayid/public_html/user/register.php on line 345
+[30-Oct-2024 03:36:10 UTC] PHP Warning:  Undefined variable $umur2 in /home/surpayid/public_html/user/register.php on line 366
+[30-Oct-2024 03:36:10 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'nama' in 'field list' in /home/surpayid/public_html/user/register.php:378
+Stack trace:
+#0 /home/surpayid/public_html/user/register.php(378): mysqli->query()
+#1 {main}
+  thrown in /home/surpayid/public_html/user/register.php on line 378
+[06-Nov-2024 01:08:15 UTC] PHP Warning:  Undefined array key "tgl_lahir" in /home/surpayid/public_html/user/register.php on line 345
+[06-Nov-2024 01:08:15 UTC] PHP Warning:  Undefined variable $umur2 in /home/surpayid/public_html/user/register.php on line 366
+[06-Nov-2024 01:08:15 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'nama' in 'field list' in /home/surpayid/public_html/user/register.php:378
+Stack trace:
+#0 /home/surpayid/public_html/user/register.php(378): mysqli->query()
+#1 {main}
+  thrown in /home/surpayid/public_html/user/register.php on line 378
+[09-Nov-2024 14:06:32 Asia/Jakarta] PHP Warning:  Undefined array key "tgl_lahir" in /home/surpayid/public_html/user/register.php on line 345
+[09-Nov-2024 14:06:32 Asia/Jakarta] PHP Warning:  Undefined variable $umur2 in /home/surpayid/public_html/user/register.php on line 366
+[09-Nov-2024 14:06:32 Asia/Jakarta] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'nama' in 'field list' in /home/surpayid/public_html/user/register.php:378
+Stack trace:
+#0 /home/surpayid/public_html/user/register.php(378): mysqli->query()
+#1 {main}
+  thrown in /home/surpayid/public_html/user/register.php on line 378
+[09-Nov-2024 14:07:33 Asia/Jakarta] PHP Warning:  Undefined array key "tgl_lahir" in /home/surpayid/public_html/user/register.php on line 345
+[09-Nov-2024 14:07:33 Asia/Jakarta] PHP Warning:  Undefined variable $umur2 in /home/surpayid/public_html/user/register.php on line 366
+[09-Nov-2024 14:07:33 Asia/Jakarta] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'nama' in 'field list' in /home/surpayid/public_html/user/register.php:378
+Stack trace:
+#0 /home/surpayid/public_html/user/register.php(378): mysqli->query()
+#1 {main}
+  thrown in /home/surpayid/public_html/user/register.php on line 378
+[11-Nov-2024 08:20:26 Asia/Jakarta] PHP Warning:  Undefined array key "tgl_lahir" in /home/surpayid/public_html/user/register.php on line 345
+[11-Nov-2024 08:20:26 Asia/Jakarta] PHP Warning:  Undefined variable $umur2 in /home/surpayid/public_html/user/register.php on line 366
+[11-Nov-2024 08:20:26 Asia/Jakarta] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'nama' in 'field list' in /home/surpayid/public_html/user/register.php:378
+Stack trace:
+#0 /home/surpayid/public_html/user/register.php(378): mysqli->query()
+#1 {main}
+  thrown in /home/surpayid/public_html/user/register.php on line 378

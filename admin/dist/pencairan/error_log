@@ -1,0 +1,42 @@
+[03-Oct-2024 15:31:22 UTC] PHP Warning:  Undefined array key "id" in /home/surpayid/public_html/admin/dist/pencairan/buktitransfer.php on line 2
+[03-Oct-2024 15:31:29 UTC] PHP Warning:  Undefined array key "id" in /home/surpayid/public_html/admin/dist/pencairan/buktitransfer.php on line 2
+[03-Oct-2024 15:31:29 UTC] PHP Warning:  move_uploaded_file(pencairan/bukti/em.php): Failed to open stream: No such file or directory in /home/surpayid/public_html/admin/dist/pencairan/buktitransfer.php on line 49
+[03-Oct-2024 15:31:29 UTC] PHP Warning:  move_uploaded_file(): Unable to move '/tmp/phpyQq7vi' to 'pencairan/bukti/em.php' in /home/surpayid/public_html/admin/dist/pencairan/buktitransfer.php on line 49
+[03-Oct-2024 15:31:29 UTC] PHP Warning:  Undefined variable $koneksi in /home/surpayid/public_html/admin/dist/pencairan/buktitransfer.php on line 54
+[03-Oct-2024 15:31:29 UTC] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/surpayid/public_html/admin/dist/pencairan/buktitransfer.php:54
+Stack trace:
+#0 {main}
+  thrown in /home/surpayid/public_html/admin/dist/pencairan/buktitransfer.php on line 54
+[03-Oct-2024 15:31:35 UTC] PHP Warning:  Undefined variable $koneksi in /home/surpayid/public_html/admin/dist/pencairan/undian.php on line 8
+[03-Oct-2024 15:31:35 UTC] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/surpayid/public_html/admin/dist/pencairan/undian.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/surpayid/public_html/admin/dist/pencairan/undian.php on line 8
+[03-Oct-2024 15:31:36 UTC] PHP Warning:  Undefined array key "h" in /home/surpayid/public_html/admin/dist/pencairan/undianpemenang.php on line 2
+[03-Oct-2024 15:31:42 UTC] PHP Warning:  Undefined array key "h" in /home/surpayid/public_html/admin/dist/pencairan/undianpemenang.php on line 2
+[03-Oct-2024 15:31:42 UTC] PHP Warning:  Undefined variable $koneksi in /home/surpayid/public_html/admin/dist/pencairan/undianpemenang.php on line 53
+[03-Oct-2024 15:31:42 UTC] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/surpayid/public_html/admin/dist/pencairan/undianpemenang.php:53
+Stack trace:
+#0 {main}
+  thrown in /home/surpayid/public_html/admin/dist/pencairan/undianpemenang.php on line 53
+[03-Oct-2024 15:32:16 UTC] PHP Warning:  Undefined variable $koneksi in /home/surpayid/public_html/admin/dist/pencairan/undian.php on line 8
+[03-Oct-2024 15:32:16 UTC] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/surpayid/public_html/admin/dist/pencairan/undian.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/surpayid/public_html/admin/dist/pencairan/undian.php on line 8
+[03-Oct-2024 15:32:17 UTC] PHP Warning:  Undefined array key "h" in /home/surpayid/public_html/admin/dist/pencairan/undianpemenang.php on line 2
+[03-Oct-2024 15:32:25 UTC] PHP Warning:  Undefined array key "h" in /home/surpayid/public_html/admin/dist/pencairan/undianpemenang.php on line 2
+[03-Oct-2024 15:32:25 UTC] PHP Warning:  Undefined variable $koneksi in /home/surpayid/public_html/admin/dist/pencairan/undianpemenang.php on line 53
+[03-Oct-2024 15:32:25 UTC] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/surpayid/public_html/admin/dist/pencairan/undianpemenang.php:53
+Stack trace:
+#0 {main}
+  thrown in /home/surpayid/public_html/admin/dist/pencairan/undianpemenang.php on line 53
+[03-Oct-2024 15:32:31 UTC] PHP Warning:  Undefined array key "id" in /home/surpayid/public_html/admin/dist/pencairan/buktitransfer.php on line 2
+[03-Oct-2024 15:32:37 UTC] PHP Warning:  Undefined array key "id" in /home/surpayid/public_html/admin/dist/pencairan/buktitransfer.php on line 2
+[03-Oct-2024 15:32:37 UTC] PHP Warning:  move_uploaded_file(pencairan/bukti/Andi.jpg): Failed to open stream: No such file or directory in /home/surpayid/public_html/admin/dist/pencairan/buktitransfer.php on line 49
+[03-Oct-2024 15:32:37 UTC] PHP Warning:  move_uploaded_file(): Unable to move '/tmp/phpxjkzID' to 'pencairan/bukti/Andi.jpg' in /home/surpayid/public_html/admin/dist/pencairan/buktitransfer.php on line 49
+[03-Oct-2024 15:32:37 UTC] PHP Warning:  Undefined variable $koneksi in /home/surpayid/public_html/admin/dist/pencairan/buktitransfer.php on line 54
+[03-Oct-2024 15:32:37 UTC] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/surpayid/public_html/admin/dist/pencairan/buktitransfer.php:54
+Stack trace:
+#0 {main}
+  thrown in /home/surpayid/public_html/admin/dist/pencairan/buktitransfer.php on line 54
