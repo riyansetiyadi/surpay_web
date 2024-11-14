@@ -1,109 +1,51 @@
-<?php 
+<?php
 session_start();
-$session_duration = 8000*60*60;   
-// session_set_cookie_params($session_duration);
-// ini_set('session.gc_maxlifetime', $session_duration);
+$session_duration = 8000 * 60 * 60;
 
 //jalankan halaman fungsi
-
 require '../admin/dist/function.php';
-
-
 
 //jalankan session
 //cek cookie
+if (isset($_COOKIE['id']) && isset($_COOKIE['key'])) {
 
-if (isset($_COOKIE['id']) && isset($_COOKIE['key']) ) {
+  $id = $_COOKIE['id'];
 
-    $id=$_COOKIE['id'];
-    $key=$_COOKIE['key'];
+  //ambil nohp berdasarkan id
+  $result = mysqli_query($koneksi, "SELECT * FROM user WHERE iduser = $id");
+  $row = mysqli_fetch_assoc($result);
 
-
-
-    //ambil nohp berdasarkan id
-
-    $result = mysqli_query($koneksi, "SELECT nohp FROM user WHERE idadmin = $id");
-
-    $row=mysqli_fetch_assoc($result);
-
-    //cek cookie dan nohp
-
-    if ($key===$row['nohp']) {
-
-        $_SESSION['admin'] = $row;
-
-        $_SESSION['login'] = $row;
-
-    }
-
+  //cek cookie dan nohp
+  if ($row) {
+    $_SESSION['id'] = $row['iduser'];
+  }
 }
-
 
 //jika tombol login di tekan
+if (isset($_POST["login"])) {
+  $nohp = $_POST["nohp"];
+  $password = $_POST["password"];
 
-if (isset ($_POST["login"])) {
+  $result = mysqli_query($koneksi, "SELECT * FROM user WHERE nohp='$nohp' AND password='$password';");
 
-    $nohp=$_POST["nohp"];
-
-    $password=$_POST["password"];
-
-	 
-    
-
-
-    $result=mysqli_query($koneksi, "SELECT * FROM user WHERE nohp='$nohp'");
-
-    $baris=mysqli_num_rows($result);
-
-    // var_dump($baris);
-
-    //cek nohp
-
-    if (mysqli_num_rows($result)===1) {
-
+  //cek nohp
+  if (mysqli_num_rows($result) === 1) {
     //cek password
-
-        //ambil dulu data password dari db
-
-        $row2=mysqli_fetch_assoc($result);
-
-        //var_dump($row2['password']);
-
-        if ($password==$row2['password']){
-
-        //set sessionnya, sebelumnya jalankan session di code no 1
-
-        
-            $_SESSION['admin']= $row2;
-
-            $_SESSION['login']= true;
-
-			      $_SESSION['shift']=$shift;
-			      $_SESSION['dokter_rawat']=$dokter_rawat;
-            $_SESSION['login_time'] = time();
-            
-//remember
-    setcookie("aku", $row2['idadmin'], time()+120000000);
-    setcookie("aku2", $row2['nohp'], time()+120000000);
-    setcookie("key2", $row2['password'], time()+120000000);
-
-        
-            echo "<script> location='index.php?halaman=utama'; </script> ";
-      
-        //header('location:home.php');
-
-        exit;
-
-        }
-    }
-
-$error=true;
-
+    //ambil dulu data password dari db
+    $userdata = mysqli_fetch_assoc($result);
+    $_SESSION['id'] = $userdata['iduser'];
+    setcookie("id", $userdata['iduser'], time() + 120000000);
+    echo "<script> location='index.php?halaman=utama'; </script> ";
+    exit;
+  } else {
+    echo "
+    <script>
+    alert('Nomor HP atau password salah.');
+    </script>
+    ";
+  }
 }
 ?>
-
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -154,8 +96,8 @@ $error=true;
           <div class="row justify-content-center">
             <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center">
 
-              
-              <h2  style="margin-top:1px; font-weight: bold; color:darkblue">SurPay: Survey Dibayar</h2>
+
+              <h2 style="margin-top:1px; font-weight: bold; color:darkblue">SurPay: Survey Dibayar</h2>
 
               <div class="card mb-3">
 
@@ -179,11 +121,11 @@ $error=true;
 
                     <div class="col-12">
                       <label for="yourPassword" class="form-label">Password</label>
-                      <input type="password" name="password" class="form-control"  required>
+                      <input type="password" name="password" class="form-control" required>
                       <div class="invalid-feedback">Masukkan Password</div>
                     </div>
 
-               
+
                     <div class="col-12">
                       <div class="form-check">
                         <input class="form-check-input" type="checkbox" name="remember" value="true" id="rememberMe">
@@ -191,9 +133,9 @@ $error=true;
                       </div>
                     </div>
                     <div class="col-12">
-                      <button class="btn btn-primary w-100" type="submit" name="login">Login</button> 
+                      <button class="btn btn-primary w-100" type="submit" name="login">Login</button>
                       <hr>
-                      <a href="register.php" class="btn btn-danger" style="margin-left: 10%" >Daftar & dapatkan hadiah</a>
+                      <a href="register.php" class="btn btn-danger" style="margin-left: 10%">Daftar & dapatkan hadiah</a>
                     </div>
                     <div class="col-12">
                     </div>
@@ -207,7 +149,7 @@ $error=true;
                 <!-- You can delete the links only if you purchased the pro version. -->
                 <!-- Licensing information: https://bootstrapmade.com/license/ -->
                 <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
-               Solverra 
+                Solverra
               </div>
 
             </div>
