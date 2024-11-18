@@ -1,6 +1,21 @@
 <?php
-
+session_start();
 require '../admin/dist/function.php';
+
+if (isset($_COOKIE['id'])) {
+
+  $id = $_COOKIE['id'];
+
+  //ambil nohp berdasarkan id
+  $result = mysqli_query($koneksi, "SELECT * FROM user WHERE iduser = $id");
+  $row = mysqli_fetch_assoc($result);
+
+  //cek cookie dan nohp
+  if ($row) {
+    $_SESSION['id'] = $row['iduser'];
+    echo "<script> location='index.php?halaman=utama'; </script> ";
+  }
+}
 
 ?>
 <!DOCTYPE html>

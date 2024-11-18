@@ -2,9 +2,12 @@
 
 <?php
 include '../admin/dist/function.php';
-$username = $_SESSION['admin']['nohp'];
+$id = $_SESSION['id'];
+$result = mysqli_query($koneksi, "SELECT * FROM user WHERE iduser = $id");
+$row = mysqli_fetch_assoc($result);
+$username = $row['nohp'];
 date_default_timezone_set('Asia/Jakarta');
-if (!isset($_SESSION['login'])) {
+if (!isset($_SESSION['id'])) {
     echo "<script> location='login.php'; </script> ";
     exit;
 }
@@ -111,6 +114,10 @@ if (!isset($_SESSION['login'])) {
                 <a href="index.php?halaman=contact" class="nav__link">
                     <i class="material-icons nav__icon">contact_support</i>
                     <span class="nav__text">Kontak</span>
+                </a>
+                <a href="index.php?halaman=logout" class="nav__link">
+                    <i class="material-icons nav__icon">logout</i>
+                    <span class="nav__text">Logout</span>
                 </a>
             </nav>
         </div>

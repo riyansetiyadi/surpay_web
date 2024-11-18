@@ -11,13 +11,11 @@
 <body>
   <?php
   $id = $_GET['id'];
-  $nohp = $_SESSION['admin']['nohp'];
-  //var_dump($nohp);
-  $ambiluser = $koneksi->query("SELECT * from user where nohp='$nohp' ");
-  $pecahuser = $ambiluser->fetch_assoc();
-  $iduser = $pecahuser['iduser'];
-  //var_dump($iduser);
+  $iduser = $_SESSION['id'];
+  $result = mysqli_query($koneksi, "SELECT * FROM user WHERE iduser = $iduser");
+  $userdata = mysqli_fetch_assoc($result);
 
+  $nohp = $userdata['nohp'];
   ?>
 
   <?php $ambil2 = $koneksi->query("SELECT * from pertanyaan where idsurvey='$id' "); ?>

@@ -2,7 +2,7 @@
 
 //ambil tangggal skr
 date_default_timezone_set('Asia/Jakarta');
-if (!isset($_SESSION['login'])) {
+if (!isset($_SESSION['id'])) {
 	header("location:login.php");
 	exit;
 }

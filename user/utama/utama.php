@@ -26,8 +26,10 @@ $ambil = $koneksi->query("SELECT * from utama order by bikin desc;");
 		<table class="table table-light table-striped">
 			<thead>
 				<tr>
-					<th>Tanggal Pembuatan</th>
+					<th>Tanggal</th>
 					<th>Nama Lengkap</th>
+					<th>Keterangan</th>
+					<th>Jumlah</th>
 					<th>Bukti</th>
 				</tr>
 			</thead>
@@ -36,11 +38,11 @@ $ambil = $koneksi->query("SELECT * from utama order by bikin desc;");
 					<tr>
 						<td><?php echo $pecah['bikin'] ?></td>
 						<td><?php echo $pecah["nama_lengkap"]; ?> </td>
+						<td><?= $pecah['ket'] ?> </td>
+						<td><?= $pecah['jumlah'] ?></td>
 						<?php if ($pecah['bukti'] != ''): ?>
 							<td>
 								<a class="btn btn-warning" style="color: white;" href="../admin/dist/pencairan/bukti/<?php echo $pecah['bukti'] ?>">
-									<?php echo $pecah["ket"]; ?>
-									<?php echo $pecah["jumlah"]; ?>
 									<?php echo $pecah["hadiah"]; ?>
 								</a>
 							</td>

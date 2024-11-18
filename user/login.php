@@ -1,13 +1,12 @@
 <?php
 session_start();
-$session_duration = 8000 * 60 * 60;
 
 //jalankan halaman fungsi
 require '../admin/dist/function.php';
 
 //jalankan session
 //cek cookie
-if (isset($_COOKIE['id']) && isset($_COOKIE['key'])) {
+if (isset($_COOKIE['id'])) {
 
   $id = $_COOKIE['id'];
 
@@ -18,6 +17,7 @@ if (isset($_COOKIE['id']) && isset($_COOKIE['key'])) {
   //cek cookie dan nohp
   if ($row) {
     $_SESSION['id'] = $row['iduser'];
+    echo "<script> location='index.php?halaman=utama'; </script> ";
   }
 }
 
