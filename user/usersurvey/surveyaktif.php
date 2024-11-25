@@ -1,14 +1,12 @@
 <?php
-//var_dump($username);
-
-
-
+$id = $_SESSION['id'];
+$user_data = $koneksi->query("SELECT * FROM user WHERE iduser='$id';")->fetch_assoc();
 
 if (isset($_POST['submit'])) {
   $kata = $_POST["keyword"];
   $ambil = $koneksi->query("SELECT * FROM survey_set WHERE title LIKE '%$kata%' OR description LIKE '%$kata%' ");
 } else {
-  $ambil = mysqli_query($koneksi, "SELECT * from survey_set WHERE NOT EXISTS (SELECT idsurvey, nama from jawaban where survey_set.id=jawaban.idsurvey and nama='$username')  order by id desc ");
+  $ambil = mysqli_query($koneksi, "SELECT * from survey_set WHERE NOT EXISTS (SELECT idsurvey, nama from jawaban where survey_set.id=jawaban.idsurvey and iduser='$user_data[iduser]')  order by id desc ");
 }
 
 

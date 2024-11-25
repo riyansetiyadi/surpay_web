@@ -77,7 +77,7 @@ if (!isset($_SESSION['id'])) {
             $pecahh = $ambilh->fetch_assoc();
             ?>
             <div style="background-color: white; height: 90px; width: 96%; margin-top: 3%; margin-left: 2%; border-radius: 30px"> <br>
-                <span style="margin-left: 3%; font-size: 20px; text-align: start;"><b>Saldo Anda: </b><span style="font-size: 25px; font-weight: bold; color: red">Rp. <?php echo $pecahh['uang'] ?></span></span>
+                <span style="margin-left: 3%; font-size: 20px; text-align: start;"><b>Saldo Anda: </b><span style="font-size: 25px; font-weight: bold; color: red">Rp. <?php echo $pecahh['uang'] ?? 0 ?></span></span>
             </div>
             <!-- Page content-->
             <div class="container-fluid">

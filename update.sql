@@ -1,0 +1,1 @@
+ALTER TABLE `survey_set` CHANGE `date_created` `date_created` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP;
