@@ -39,10 +39,10 @@ if ($result->num_rows > 0) {
     $expire_date = new DateTime($expire);
 
     if ($current_date > $expire_date) {
-        http_response_code(400);
+        http_response_code(401);
         echo json_encode([
             "error" => true,
-            "message" => "Token sudah kadaluarsa, silahkan login kembali"
+            "message" => "Token sudah kadaluarsa, silahkan login kembali",
         ]);
         exit;
     }

@@ -24,6 +24,15 @@ if (preg_match('/^Bearer\s(\S+)$/', $headers['authorization'], $matches)) {
 }
 
 $stmt = $koneksi->prepare("SELECT iduser, nohp, uniq_code, expire_ucode FROM user WHERE uniq_code = ?");
+if ($stmt === false) {
+    // Error preparing the query
+    http_response_code(500);
+    echo json_encode([
+        "error" => true,
+        "message" => "Terjadi kesalahan pada query: " . $koneksi->error
+    ]);
+    exit;
+}
 $stmt->bind_param('s', $uniq_code);
 $stmt->execute();
 $result = $stmt->get_result();
@@ -52,7 +61,6 @@ if ($result->num_rows > 0) {
     $nomor = htmlspecialchars($data['nomer']);
     $komentar = htmlspecialchars($data['komentar']);
     $idtanya = $idsurvey . $nomor;
-
 
     $ambilpertanyaan = $koneksi->query("SELECT * FROM pertanyaan WHERE idsurvey = '$idsurvey' AND nomer = '$nomor'");
     if ($ambilpertanyaan->num_rows == 0) {
@@ -93,44 +101,99 @@ if ($result->num_rows > 0) {
             exit;
     }
 
+    $checkExistingAnswer = $koneksi->prepare("SELECT idjawab FROM jawaban WHERE idtanya = ? AND iduser = ? AND idsurvey = ?");
+    if ($checkExistingAnswer === false) {
+        http_response_code(500);
+        echo json_encode([
+            "error" => true,
+            "message" => "Terjadi kesalahan pada query: " . $koneksi->error
+        ]);
+        exit;
+    }
+    $checkExistingAnswer->bind_param('sss', $idtanya, $iduser, $idsurvey);
+    $checkExistingAnswer->execute();
+    $existingAnswerResult = $checkExistingAnswer->get_result();
 
-    $stmt1 = $koneksi->prepare("INSERT INTO jawaban (nama, iduser, idsurvey, pertanyaan, jawaban, komentar, idtanya) VALUES (?, ?, ?, ?, ?, ?, ?)");
-    $stmt1->bind_param('ssisssi', $nohp, $iduser, $idsurvey, $soal, $val_jawaban, $komentar, $idtanya);
-    $stmt1->execute();
+    if ($existingAnswerResult->num_rows > 0) {
+        $updateAnswer = $koneksi->prepare("UPDATE jawaban SET jawaban = ?, komentar = ? WHERE idtanya = ? AND iduser = ? AND idsurvey = ?");
+        if ($updateAnswer === false) {
+            http_response_code(500);
+            echo json_encode([
+                "error" => true,
+                "message" => "Terjadi kesalahan pada query update: " . $koneksi->error
+            ]);
+            exit;
+        }
+        $updateAnswer->bind_param('sssss', $val_jawaban, $komentar, $idtanya, $iduser, $idsurvey);
+        $updateAnswer->execute();
 
-    if ($stmt1->affected_rows > 0) {
-        $queryTotalPertanyaan = $koneksi->query("SELECT COUNT(*) as total_pertanyaan FROM pertanyaan WHERE idsurvey = '$idsurvey'");
-        $totalPertanyaan = $queryTotalPertanyaan->fetch_assoc()['total_pertanyaan'];
-
-        $queryTotalJawaban = $koneksi->query("SELECT COUNT(*) as total_jawaban FROM jawaban WHERE iduser = '$iduser' AND idsurvey = '$idsurvey'");
-        $totalJawaban = $queryTotalJawaban->fetch_assoc()['total_jawaban'];
-
-        if ($totalPertanyaan == $totalJawaban) {
-            $ambilHadiah = $koneksi->query("SELECT * FROM survey_set WHERE id = '$idsurvey'");
-            $pecahHadiah = $ambilHadiah->fetch_assoc();
-            $poin = $pecahHadiah['poin'];
-            $undian = $pecahHadiah['undian'];
-
-            $stmt2 = $koneksi->prepare("INSERT INTO hadiah (nama, iduser, idsurvey, poin, undian, jam) VALUES (?, ?, ?, ?, ?, NOW())");
-            $stmt2->bind_param('sssiss', $nohp, $iduser, $idsurvey, $poin, $undian);
-            $stmt2->execute();
-
+        if ($updateAnswer->affected_rows > 0) {
             echo json_encode([
                 "error" => false,
-                "message" => "Jawaban berhasil disimpan, dan hadiah diberikan"
+                "message" => "Jawaban berhasil diperbarui"
             ]);
         } else {
+            http_response_code(400);
             echo json_encode([
-                "error" => false,
-                "message" => "Jawaban berhasil disimpan"
+                "error" => true,
+                "message" => "Jawaban gagal diperbarui"
             ]);
         }
     } else {
-        http_response_code(400);
-        echo json_encode([
-            "error" => false,
-            "message" => "Jawaban gagal disimpan"
-        ]);
+        $stmt1 = $koneksi->prepare("INSERT INTO jawaban (nama, iduser, idsurvey, pertanyaan, jawaban, komentar, idtanya) VALUES (?, ?, ?, ?, ?, ?, ?)");
+        if ($stmt1 === false) {
+            http_response_code(500);
+            echo json_encode([
+                "error" => true,
+                "message" => "Terjadi kesalahan pada query insert: " . $koneksi->error
+            ]);
+            exit;
+        }
+        $stmt1->bind_param('ssisssi', $nohp, $iduser, $idsurvey, $soal, $val_jawaban, $komentar, $idtanya);
+        $stmt1->execute();
+
+        if ($stmt1->affected_rows > 0) {
+            $queryTotalPertanyaan = $koneksi->query("SELECT COUNT(*) as total_pertanyaan FROM pertanyaan WHERE idsurvey = '$idsurvey'");
+            $totalPertanyaan = $queryTotalPertanyaan->fetch_assoc()['total_pertanyaan'];
+
+            $queryTotalJawaban = $koneksi->query("SELECT COUNT(*) as total_jawaban FROM jawaban WHERE iduser = '$iduser' AND idsurvey = '$idsurvey'");
+            $totalJawaban = $queryTotalJawaban->fetch_assoc()['total_jawaban'];
+
+            if ($totalPertanyaan == $totalJawaban) {
+                $ambilHadiah = $koneksi->query("SELECT * FROM survey_set WHERE id = '$idsurvey'");
+                $pecahHadiah = $ambilHadiah->fetch_assoc();
+                $poin = $pecahHadiah['poin'];
+                $undian = $pecahHadiah['undian'];
+
+                $stmt2 = $koneksi->prepare("INSERT INTO hadiah (nama, iduser, idsurvey, poin, undian, jam) VALUES (?, ?, ?, ?, ?, NOW())");
+                if ($stmt2 === false) {
+                    http_response_code(500);
+                    echo json_encode([
+                        "error" => true,
+                        "message" => "Terjadi kesalahan pada query hadiah: " . $koneksi->error
+                    ]);
+                    exit;
+                }
+                $stmt2->bind_param('sssis', $nohp, $iduser, $idsurvey, $poin, $undian);
+                $stmt2->execute();
+
+                echo json_encode([
+                    "error" => false,
+                    "message" => "Jawaban berhasil disimpan, dan hadiah diberikan"
+                ]);
+            } else {
+                echo json_encode([
+                    "error" => false,
+                    "message" => "Jawaban berhasil disimpan"
+                ]);
+            }
+        } else {
+            http_response_code(400);
+            echo json_encode([
+                "error" => true,
+                "message" => "Jawaban gagal disimpan"
+            ]);
+        }
     }
 } else {
     http_response_code(400);
