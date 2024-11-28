@@ -66,7 +66,7 @@ if ($result->num_rows > 0) {
     } else {
         http_response_code(400);
         echo json_encode([
-            "error" => true,
+            "error" => false,
             "message" => "Data tidak ditemukan",
             "data" => []
         ]);
