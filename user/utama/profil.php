@@ -6,7 +6,7 @@ if (!isset($_SESSION['id'])) {
 	header("location:login.php");
 	exit;
 }
-$ambil = $koneksi->query("SELECT * FROM  user WHERE nohp='$nama'  ");
+$ambil = $koneksi->query("SELECT * FROM  user WHERE nohp='$phone_number'  ");
 
 ?>
 <div class="card mt-3 px-3 mx-3" style="width: 70%">

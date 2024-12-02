@@ -1,1 +1,1 @@
-<h1>halaman utama</h1>
+<h1>Halaman Utama</h1>

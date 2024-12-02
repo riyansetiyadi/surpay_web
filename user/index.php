@@ -5,7 +5,7 @@ include '../admin/dist/function.php';
 $id = $_SESSION['id'];
 $result = mysqli_query($koneksi, "SELECT * FROM user WHERE iduser = $id");
 $row = mysqli_fetch_assoc($result);
-$username = $row['nohp'];
+$phone_number = $row['nohp'];
 date_default_timezone_set('Asia/Jakarta');
 if (!isset($_SESSION['id'])) {
     echo "<script> location='login.php'; </script> ";
@@ -21,7 +21,7 @@ if (!isset($_SESSION['id'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>SurvPay</title>
+    <title>Surpay</title>
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <!-- Core theme CSS (includes Bootstrap)-->
@@ -72,8 +72,7 @@ if (!isset($_SESSION['id'])) {
     <div class="d-flex" id="wrapper">
         <div id="page-content-wrapper">
             <?php
-            $nama = $username;
-            $ambilh = $koneksi->query("SELECT sum(poin) as uang from hadiah where nama='$nama' order by idhadiah desc ");
+            $ambilh = $koneksi->query("SELECT sum(poin) as uang FROM transactions where phone_number='$phone_number' order by idhadiah desc ");
             $pecahh = $ambilh->fetch_assoc();
             ?>
             <div style="background-color: white; height: 90px; width: 96%; margin-top: 3%; margin-left: 2%; border-radius: 30px"> <br>

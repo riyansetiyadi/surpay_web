@@ -1,9 +1,7 @@
  <?php
+  //var_dump($phone_number);
 
-  $nama = $username;
-  //var_dump($nama);
-
-  $ambil = $koneksi->query("SELECT * from hadiah where nama='$nama' order by idhadiah desc ");
+  $ambil = $koneksi->query("SELECT * FROM transactions where phone_number='$phone_number' order by idhadiah desc ");
 
 
   ?>

@@ -1,1 +1,9 @@
+ALTER TABLE `user` ADD uniq_code VARCHAR(100) NOT NULL AFTER alamat;
+ALTER TABLE `user` ADD expire_ucode DATETIME NULL AFTER uniq_code;
 ALTER TABLE `survey_set` CHANGE `date_created` `date_created` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP;
+ALTER TABLE `survey_set` ADD `limit_respondents` INT NOT NULL DEFAULT '0' AFTER `undian`;
+RENAME TABLE `hadiah` TO `transactions`;
+ALTER TABLE `transactions` CHANGE `nama` `phone_number` VARCHAR(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL;
+ALTER TABLE `transactions` ADD `type` VARCHAR(50) NULL DEFAULT NULL AFTER `bukti`;
+ALTER TABLE `user` ADD `referral_code` VARCHAR(100) NULL DEFAULT NULL AFTER `alamat`;
+ALTER TABLE `user` ADD `referrer_code` VARCHAR(100) NULL DEFAULT NULL AFTER `referral_code`;

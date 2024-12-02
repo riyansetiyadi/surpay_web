@@ -1,7 +1,7 @@
 <?php session_start(); ?>
 
-<?php 
-$session_duration = 8*60*60;   
+<?php
+$session_duration = 8 * 60 * 60;
 // session_set_cookie_params($session_duration);
 // ini_set('session.gc_maxlifetime', $session_duration);
 
@@ -14,93 +14,89 @@ require 'function.php';
 //jalankan session
 //cek cookie
 
-if (isset($_COOKIE['id']) && isset($_COOKIE['key']) ) {
+if (isset($_COOKIE['id']) && isset($_COOKIE['key'])) {
 
-    $id=$_COOKIE['id'];
+  $id = $_COOKIE['id'];
 
-    $key=$_COOKIE['key'];
+  $key = $_COOKIE['key'];
 
 
 
-    //ambil username berdasarkan id
+  //ambil username berdasarkan id
 
-    $result = mysqli_query($koneksi, "SELECT username FROM admin WHERE id = $id");
+  $result = mysqli_query($koneksi, "SELECT username FROM admin WHERE id = $id");
 
-    $row=mysqli_fetch_assoc($result);
+  $row = mysqli_fetch_assoc($result);
 
-    //cek cookie dan username
+  //cek cookie dan username
 
-    if ($key===$row['username']) {
+  if ($key === $row['username']) {
 
-        $_SESSION['admin'] = $row;
+    $_SESSION['admin'] = $row;
 
-        $_SESSION['login'] = $row;
-
-    }
-
+    $_SESSION['login'] = $row;
+  }
 }
 
 
 //jika tombol login di tekan
 
-if (isset ($_POST["login"])) {
+if (isset($_POST["login"])) {
 
-    $username=$_POST["username"];
+  $username = $_POST["username"];
 
-    $password=$_POST["password"];
+  $password = $_POST["password"];
 
-	  $shift=$_POST['shift'];
-    
-	  $dokter_rawat=$_POST['dokter_rawat'];
-    
+  $shift = $_POST['shift'];
+
+  $dokter_rawat = $_POST['dokter_rawat'];
 
 
-    $result=mysqli_query($koneksi, "SELECT * FROM admin WHERE username='$username'");
 
-    $baris=mysqli_num_rows($result);
+  $result = mysqli_query($koneksi, "SELECT * FROM admin WHERE username='$username'");
 
-    // var_dump($baris);
+  $baris = mysqli_num_rows($result);
 
-    //cek username
+  // var_dump($baris);
 
-    if (mysqli_num_rows($result)===1) {
+  //cek username
+
+  if (mysqli_num_rows($result) === 1) {
 
     //cek password
 
-        //ambil dulu data password dari db
+    //ambil dulu data password dari db
 
-        $row2=mysqli_fetch_assoc($result);
+    $row2 = mysqli_fetch_assoc($result);
 
-        //var_dump($row2['password']);
+    //var_dump($row2['password']);
 
-        if ($password==$row2['password']){
+    if ($password == $row2['password']) {
 
-        //set sessionnya, sebelumnya jalankan session di code no 1
-
-        
-            $_SESSION['admin']= $row2;
-
-            $_SESSION['login']= true;
-
-			      $_SESSION['shift']=$shift;
-			      $_SESSION['dokter_rawat']=$dokter_rawat;
-            $_SESSION['login_time'] = time();
-            
+      //set sessionnya, sebelumnya jalankan session di code no 1
 
 
-         
-            echo "<script> location='index.php'; </script> ";
-          
+      $_SESSION['admin'] = $row2;
 
-        //header('location:home.php');
+      $_SESSION['login'] = true;
 
-        exit;
+      $_SESSION['shift'] = $shift;
+      $_SESSION['dokter_rawat'] = $dokter_rawat;
+      $_SESSION['login_time'] = time();
 
-        }
+
+
+
+      echo "<script> location='index.php'; </script> ";
+
+
+      //header('location:home.php');
+
+      exit;
     }
+  }
 
-$error=true;
-
+  $error = true;
 }
 ?>
 
@@ -114,7 +110,7 @@ $error=true;
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Login - Klinik</title>
+  <title>Login - Surpay</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -161,7 +157,7 @@ $error=true;
                   <img src="assets/img/3.png" alt="">
                 </a>
               </div><!-- End Logo -->
-              <h2  style="margin-top:1px; font-weight: bold; color:darkblue">Admin SurvPay</h2>
+              <h2 style="margin-top:1px; font-weight: bold; color:darkblue">Admin Surpay</h2>
 
               <div class="card mb-3">
 
@@ -185,11 +181,11 @@ $error=true;
 
                     <div class="col-12">
                       <label for="yourPassword" class="form-label">Password</label>
-                      <input type="password" name="password" class="form-control"  required>
+                      <input type="password" name="password" class="form-control" required>
                       <div class="invalid-feedback">Masukkan Password</div>
                     </div>
 
-                
+
 
                     <div class="col-12">
                       <div class="form-check">
@@ -213,7 +209,7 @@ $error=true;
                 <!-- You can delete the links only if you purchased the pro version. -->
                 <!-- Licensing information: https://bootstrapmade.com/license/ -->
                 <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
-               Solverra 
+                Solverra
               </div>
 
             </div>

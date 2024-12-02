@@ -25,7 +25,7 @@ if (preg_match('/^Bearer\s(\S+)$/', $headers['authorization'], $matches)) {
     exit;
 }
 
-$stmt = $koneksi->prepare("SELECT sum(poin) as total, hadiah.iduser, nama_lengkap, nohp, uniq_code, expire_ucode from hadiah join user on hadiah.iduser=user.iduser WHERE uniq_code = ?  GROUP BY nohp");
+$stmt = $koneksi->prepare("SELECT sum(poin) as total, hadiah.iduser, nama_lengkap, nohp, uniq_code, expire_ucode FROM transactions join user on hadiah.iduser=user.iduser WHERE uniq_code = ?  GROUP BY nohp");
 $stmt->bind_param('s', $uniq_code);
 $stmt->execute();
 $result = $stmt->get_result();
@@ -73,7 +73,7 @@ if ($result->num_rows > 0) {
     $stmt1 = $koneksi->prepare("INSERT INTO tarik (user, nama_lengkap, jumlah, rekening, namarekening, bank, bikin, iduser) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
     $stmt1->bind_param('ssissssi', $nohp, $nama_lengkap, $jumlah, $rekening, $namarekening, $bank, $curDate, $iduser);
 
-    $stmt2 = $koneksi->prepare("INSERT INTO hadiah (nama, iduser, idsurvey, poin, undian, jam) VALUES (?, ?, ?, ?, ?, ?)");
+    $stmt2 = $koneksi->prepare("INSERT INTO transactions (phone_number, iduser, idsurvey, poin, undian, jam, type) VALUES (?, ?, ?, ?, ?, ?, 'withdrawal')");
     $stmt2->bind_param('sssiss', $nohp, $iduser, $penarikan, $jumlahtarik, $undian, $curDate);
 
     if (($jumlahmax < $jumlah) || $jumlah <= 0) {

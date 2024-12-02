@@ -47,7 +47,7 @@ if ($result->num_rows > 0) {
         exit;
     }
 
-    $stmt1 = $koneksi->prepare("SELECT nama, sum(poin) AS total, hadiah.iduser, user.nama_lengkap FROM hadiah JOIN user ON hadiah.iduser = user.iduser WHERE nama = ? GROUP BY nama ");
+    $stmt1 = $koneksi->prepare("SELECT phone_number, sum(poin) AS total, hadiah.iduser, user.nama_lengkap FROM transactions JOIN user ON hadiah.iduser = user.iduser WHERE phone_number = ? GROUP BY phone_number ");
     $stmt1->bind_param('i', $nohp);
     $stmt1->execute();
     $hasil = $stmt1->get_result();

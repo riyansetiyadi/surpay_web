@@ -43,21 +43,26 @@ if ($result->num_rows > 0) {
         http_response_code(400);
         echo json_encode([
             "error" => true,
-            "message" => "Token sudah kadaluarsa, silahkan login kembali"
+            "message" => "Token sudah kadaluwarsa, silahkan login kembali"
         ]);
         exit;
     }
 
     $stmt1 = $koneksi->prepare("
         SELECT * 
-        FROM survey_set 
+        FROM survey_set AS s
         WHERE NOT EXISTS (
             SELECT idsurvey, nama 
-            FROM jawaban 
-            WHERE survey_set.id = jawaban.idsurvey 
+            FROM jawaban AS j
+            WHERE s.id = j.idsurvey 
             AND iduser = ?
         ) 
-        ORDER BY id DESC
+        AND (
+            SELECT COUNT(DISTINCT j.iduser) 
+            FROM jawaban j 
+            WHERE j.idsurvey = s.id
+        ) < s.limit_respondents
+        ORDER BY s.id DESC
     ");
     $stmt1->bind_param('i', $iduser);
     $stmt1->execute();

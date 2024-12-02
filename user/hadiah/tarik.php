@@ -5,7 +5,7 @@
   $result = mysqli_query($koneksi, "SELECT * FROM user WHERE iduser = $id");
   $userdata = mysqli_fetch_assoc($result);
 
-  $ambil = $koneksi->query("SELECT nama, sum(poin) as total, hadiah.iduser, user.nama_lengkap from hadiah join user on hadiah.iduser=user.iduser where nama='$userdata[nohp]' group by nama ");
+  $ambil = $koneksi->query("SELECT phone_number, sum(poin) as total, transactions.iduser, user.nama_lengkap FROM transactions join user on transactions.iduser=user.iduser where phone_number='$userdata[nohp]' group by phone_number ");
   $pecah = $ambil->fetch_assoc()
 
   ?>
@@ -16,7 +16,7 @@
      <div class="card">
        <div class="card-body">
          <p>Total pendapatan dari: </p>
-         <h5 class="card-title" style="font-weight: bold">username: <?php echo $userdata["nohp"]; ?></h5>
+         <h5 class="card-title" style="font-weight: bold">Nomor telepon: <?php echo $userdata["nohp"]; ?></h5>
          <p>nama: <?php echo $userdata['nama_lengkap'] ?></p>
          <hr>
          <div>
@@ -24,7 +24,7 @@
 
          </div>
          <hr>
-         <a href="index.php?halaman=tarikdana&id=<?php echo $pecah['nama'] ?>" class="btn btn-warning">Tarik Dana</a>
+         <a href="index.php?halaman=tarikdana&nohp=<?php echo $pecah['phone_number'] ?>" class="btn btn-warning">Tarik Dana</a>
 
        </div>
      </div>

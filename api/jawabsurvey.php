@@ -165,7 +165,7 @@ if ($result->num_rows > 0) {
                 $poin = $pecahHadiah['poin'];
                 $undian = $pecahHadiah['undian'];
 
-                $stmt2 = $koneksi->prepare("INSERT INTO hadiah (nama, iduser, idsurvey, poin, undian, jam) VALUES (?, ?, ?, ?, ?, NOW())");
+                $stmt2 = $koneksi->prepare("INSERT INTO transactions (phone_number, iduser, idsurvey, poin, undian, jam, type) VALUES (?, ?, ?, ?, ?, NOW(), 'survey_reward')");
                 if ($stmt2 === false) {
                     http_response_code(500);
                     echo json_encode([

@@ -47,7 +47,7 @@ if ($result->num_rows > 0) {
         exit;
     }
 
-    $stmt1 = $koneksi->prepare("SELECT * FROM hadiah WHERE iduser = ? ORDER BY idhadiah desc");
+    $stmt1 = $koneksi->prepare("SELECT * FROM transactions WHERE iduser = ? ORDER BY idhadiah desc");
     $stmt1->bind_param('i', $iduser);
     $stmt1->execute();
     $hasil = $stmt1->get_result();

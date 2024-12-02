@@ -4,7 +4,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>SurvPay</title>
+  <title>Surpay</title>
   <link rel="stylesheet" href="css/style2.css">
 </head>
 
@@ -98,9 +98,9 @@
 
     $jam = date('Y-m-d H:i:s');
 
-    $koneksi->query("INSERT INTO hadiah
-  (nama, iduser, idsurvey,  poin, undian, jam )
-  VALUES ('$nohp', '$iduser', '$idsurvey', '$poin', '$undian', '$jam')
+    $koneksi->query("INSERT INTO transactions
+  (phone_number, iduser, idsurvey,  poin, undian, jam, type)
+  VALUES ('$nohp', '$iduser', '$idsurvey', '$poin', '$undian', '$jam', 'survey_reward')
     ");
 
 
