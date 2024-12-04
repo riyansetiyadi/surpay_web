@@ -67,15 +67,13 @@ if ($result->num_rows > 0) {
     $password = htmlspecialchars($data['password']);
     $input_referrer_code = !empty($data["referrer_code"]) ? htmlspecialchars($data["referrer_code"]) : null;
 
-    if ($input_referrer_code !== $referrer_code) {
-        if ($referrer_code !== null && $referrer_code !== '') {
-            http_response_code(400);
-            echo json_encode([
-                'error' => true,
-                'message' => 'Anda sudah mengklaim referral code'
-            ]);
-            exit;
-        }
+    if ($referrer_code !== null && $referrer_code !== '' && $input_referrer_code !== $referrer_code) {
+        http_response_code(400);
+        echo json_encode([
+            'error' => true,
+            'message' => 'Anda sudah mengklaim referral code'
+        ]);
+        exit;
     }
 
     if ($referral_code === $input_referrer_code) {
@@ -110,13 +108,15 @@ if ($result->num_rows > 0) {
         $userUpdate->bind_param('si', $input_referrer_code, $iduser);
         $userUpdate->execute();
 
-        $referrerReward = $koneksi->prepare("INSERT INTO transactions (iduser, phone_number, idsurvey, poin, jam, type) VALUES (?, ?, '', 1000, NOW(), 'reward_referral')");
-        $referrerReward->bind_param('ss', $referrer_id, $referrer_hp);
-        $referrerReward->execute();
+        if ($referrer_code === null or $referrer_code === '') {
+            $referrerReward = $koneksi->prepare("INSERT INTO transactions (iduser, phone_number, idsurvey, poin, jam, type) VALUES (?, ?, '', 1000, NOW(), 'reward_referral')");
+            $referrerReward->bind_param('ss', $referrer_id, $referrer_hp);
+            $referrerReward->execute();
 
-        $userReward = $koneksi->prepare("INSERT INTO transactions (iduser, phone_number, idsurvey, poin, jam, type) VALUES (?, ?, '', 500, NOW(), 'reward_referral')");
-        $userReward->bind_param('ss', $iduser, $nohp);
-        $userReward->execute();
+            $userReward = $koneksi->prepare("INSERT INTO transactions (iduser, phone_number, idsurvey, poin, jam, type) VALUES (?, ?, '', 500, NOW(), 'reward_referral')");
+            $userReward->bind_param('ss', $iduser, $nohp);
+            $userReward->execute();
+        }
     }
 
 
