@@ -47,8 +47,7 @@ if ($result->num_rows > 0) {
         exit;
     }
 
-    $stmt1 = $koneksi->prepare("SELECT nama_lengkap, ket, jumlah, tanda as hadiah, bukti, date_format(bikin, '%d/%m/%Y') as bikin FROM tarik WHERE iduser = ?
-        UNION SELECT pemenang, ket, jumlah, hadiah, bukti, date_format(waktu, '%d/%m/%Y') FROM undian WHERE pemenang = ?");
+    $stmt1 = $koneksi->prepare("SELECT user.nama_lengkap, ket, jumlah, tanda as hadiah, bukti, date_format(bikin, '%d/%m/%Y') as bikin FROM tarik JOIN user ON user.iduser = tarik.iduser WHERE tarik.iduser = ? UNION SELECT user.nama_lengkap, ket, jumlah, hadiah, bukti, date_format(waktu, '%d/%m/%Y') FROM undian JOIN user ON user.nohp = undian.pemenang WHERE user.iduser = ?;");
     $stmt1->bind_param('ii', $iduser, $iduser);
     $stmt1->execute();
     $hasil = $stmt1->get_result();
