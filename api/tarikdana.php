@@ -25,7 +25,7 @@ if (preg_match('/^Bearer\s(\S+)$/', $headers['authorization'], $matches)) {
     exit;
 }
 
-$stmt = $koneksi->prepare("SELECT sum(poin) as total, hadiah.iduser, nama_lengkap, nohp, uniq_code, expire_ucode FROM transactions join user on hadiah.iduser=user.iduser WHERE uniq_code = ?  GROUP BY nohp");
+$stmt = $koneksi->prepare("SELECT sum(poin) as total, ts.iduser, nama_lengkap, nohp, uniq_code, expire_ucode FROM transactions ts join user on ts.iduser=user.iduser WHERE uniq_code = ?  GROUP BY nohp");
 $stmt->bind_param('s', $uniq_code);
 $stmt->execute();
 $result = $stmt->get_result();
@@ -66,7 +66,7 @@ if ($result->num_rows > 0) {
     $rekening = htmlspecialchars($data['rekening']);
     $namarekening = htmlspecialchars($data['namarekening']);
     $bank = htmlspecialchars($data['bank']);
-    $penarikan = 'penarikan';
+    $penarikan = '';
     $undian = '';
     $curDate = date('Y-m-d H:i:s');
 
@@ -81,6 +81,13 @@ if ($result->num_rows > 0) {
         echo json_encode([
             'error' => true,
             'message' => 'Jumlah penarikan melebihi saldo atau jumlah penarikan tidak valid'
+        ]);
+        exit;
+    } elseif ($jumlah < 50000) {
+        http_response_code(400);
+        echo json_encode([
+            'error' => true,
+            'message' => 'Jumlah penarikan minimal Rp 50.000'
         ]);
         exit;
     } elseif ($stmt1->execute() && $stmt2->execute()) {

@@ -1,14 +1,3 @@
-<!DOCTYPE html>
-<!-- Created By CodingNepal -->
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <title>Surpay</title>
-  <link rel="stylesheet" href="css/style2.css">
-</head>
-
-<body>
   <?php
   $id = $_GET['id'];
   $iduser = $_SESSION['id'];
@@ -31,24 +20,24 @@
         $idkeyc = $idkey . "c";
         $idkeyd = $idkey . "d";
         ?>
-        <div class="pilihan">
+        <div class="pilihan pb-2">
           <div class="title"><?php echo $pecah2['pertanyaan'] ?></div>
-          <div class="kodeku mx-3">
+          <div class="kodeku mx-3 py-1">
             <input type="radio" name="<?php echo $idkey ?>" id="<?php echo $key ?>" value="<?php echo $pecah2['a'] ?>" required>
             <label for="<?php echo $key ?>"><?php echo $pecah2['a'] ?></label>
           </div>
-          <div class="kodeku mx-3">
+          <div class="kodeku mx-3 py-1">
             <input type="radio" name="<?php echo $idkey ?>" id="<?php echo $key ?>" value="<?php echo $pecah2['b'] ?>">
             <label for="<?php echo $key ?>"><?php echo $pecah2['b'] ?></label>
           </div>
           <?php if ($pecah2['c'] != ''): ?>
-            <div class="kodeku mx-3">
+            <div class="kodeku mx-3 py-1">
               <input type="radio" name="<?php echo $idkey ?>" id="<?php echo $key ?>" value="<?php echo $pecah2['c'] ?>">
               <label for="<?php echo $key ?>"><?php echo $pecah2['c'] ?></label>
             </div>
           <?php endif ?>
           <?php if ($pecah2['d'] != ''): ?>
-            <div class="kodeku mx-3">
+            <div class="kodeku mx-3 py-1">
               <input type="radio" name="<?php echo $idkey ?>" id="<?php echo $key ?>" value="<?php echo $pecah2['d'] ?>">
               <label for="<?php echo $key ?>"><?php echo $pecah2['d'] ?></label>
             </div>
@@ -123,6 +112,3 @@
 
 
   <hr>
-</body>
-
-</html>

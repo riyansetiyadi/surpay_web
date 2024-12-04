@@ -30,8 +30,7 @@ if (isset($_COOKIE['id'])) {
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="../admin/dist/assets/img/" rel="icon">
-  <link href="../admin/dist/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link rel="icon" type="image/x-icon" href="../images/favicon.ico" />
 
   <!-- Google Fonts -->
   <link href="https://fonts.gstatic.com" rel="preconnect">
@@ -142,10 +141,14 @@ if (isset($_COOKIE['id'])) {
               <textarea type="text" name="alamat" class="form-control" style="height: 100px;" id="alamatAsal" value="" placeholder="Masukkan alamat"></textarea>
             </div>
 
-
-            <div class="btn-group mb-3 mt-2" role="group" aria-label="Basic mixed styles example">
-              <button type="button" onclick="changeForm()" class="btn btn-success" id="btn-nav"></button>
+            <div class="col-md-12 mb-2">
+              <p class="mb-0" align="left" for="referrer_code" required class="form-label">Kode Referral (Optional)</p>
+              <input type="text" name="referrer_code" id="referrer_code" class="form-control" placeholder="Masukkan kode referral" value="<?= $_GET['code_referral'] ?? '' ?>">
             </div>
+
+            <!-- <div class="btn-group mb-3 mt-2" role="group" aria-label="Basic mixed styles example">
+              <button type="button" onclick="changeForm()" class="btn btn-success" id="btn-nav"></button>
+            </div> -->
 
             <div id="btn-sub" class="hide-form">
               <p align="left" style="font-size: 12px;">
@@ -376,6 +379,12 @@ if (isset($_COOKIE['id'])) {
         $alamat = htmlspecialchars($_POST["alamat"]);
         $lahir = htmlspecialchars($_POST["lahir"]);
         $password = htmlspecialchars($_POST["password"]);
+        $referrer_code = !empty($_POST["referrer_code"]) ? htmlspecialchars($_POST["referrer_code"]) : null;
+
+        $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        $lastcode = substr($nohp, -4);
+        $referral_code = $lastcode . substr(str_shuffle($characters), 0, 4);
+
         // //hitung usia
         // var_dump($nama_lengkap);
         // var_dump($nohp);
@@ -388,10 +397,30 @@ if (isset($_COOKIE['id'])) {
         //die;
 
         if ($row <= 0) {
-          $koneksi->query("INSERT INTO `user`(`nohp`, `nama_lengkap`, `password`, `provinsi`, `kota`, `kecamatan`, `kelurahan`, `kodepos`, `alamat`, `kelamin`, `lahir`) VALUES ('$nohp','$nama_lengkap','$password','$provinsi','$kota','$kecamatan','$kelurahan','$kode_pos','$alamat', '$jenis_kelamin', '$lahir')");
+          $koneksi->query("INSERT INTO `user`(`nohp`, `nama_lengkap`, `password`, `provinsi`, `kota`, `kecamatan`, `kelurahan`, `kodepos`, `alamat`, `kelamin`, `lahir`, `referrer_code`, `referral_code`) VALUES ('$nohp','$nama_lengkap','$password','$provinsi','$kota','$kecamatan','$kelurahan','$kode_pos','$alamat', '$jenis_kelamin', '$lahir', '$referrer_code', '$referral_code')");
 
 
           if (mysqli_affected_rows($koneksi) > 0) {
+            if ($referrer_code !== null) {
+              $referrerCek = $koneksi->prepare("SELECT iduser, nohp FROM user WHERE referral_code = ? LIMIT 1");
+              $referrerCek->bind_param("s", $referrer_code);
+              $referrerCek->execute();
+              $referrerResult = $referrerCek->get_result();
+
+              if ($referrerResult->num_rows > 0) {
+                $referrerData = $referrerResult->fetch_assoc();
+                $referrer_id = $referrerData['iduser'];
+                $referrer_hp = $referrerData['nohp'];
+
+                $referrerReward = $koneksi->prepare("INSERT INTO transactions (iduser, phone_number, idsurvey, poin, jam, type) VALUES (?, ?, '', 1000, NOW(), 'reward_referral')");
+                $referrerReward->bind_param("ss", $referrer_id, $referrer_hp);
+                $referrerReward->execute();
+
+                $userReward = $koneksi->prepare("INSERT INTO transactions (iduser, phone_number, idsurvey, poin, jam, type) VALUES (?, ?, '', 500, NOW(), 'reward_referral')");
+                $userReward->bind_param("ss", $newUserId, $nohp);
+                $userReward->execute();
+              }
+            }
             echo "
             <script>
             alert('pendaftaran berhasil, silahkan login');

@@ -59,8 +59,7 @@ if (isset($_POST["login"])) {
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="../admin/dist/assets/img/icon.png" rel="icon">
-  <link href="../admin/dist/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link rel="icon" type="image/x-icon" href="../images/favicon.ico" />
 
   <!-- Google Fonts -->
   <link href="https://fonts.gstatic.com" rel="preconnect">

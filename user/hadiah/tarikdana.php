@@ -1,18 +1,23 @@
 <?php
 
-$phone_number = $_GET['nohp'];
+$iduser = $_COOKIE['id'];
+
+$result = mysqli_query($koneksi, "SELECT * FROM user WHERE iduser = $id");
+$userdata = mysqli_fetch_assoc($result);
+
 $ambil = $koneksi->query("SELECT phone_number, sum(poin) as total, transactions.iduser, nama_lengkap FROM transactions join user on transactions.iduser=user.iduser where phone_number='$phone_number' group by phone_number ");
 $pecah = $ambil->fetch_assoc();
-$namauser = $pecah['nama_lengkap'];
-$jumlahmax = $pecah['total'];
-$iduser = $pecah['iduser']
+
+$namauser = $userdata['nama_lengkap'];
+$phone_number = $userdata['nohp'];
+$jumlahmax = $pecah['total'] ?? 0;
 ?>
 <form method="post">
 
 	<div class="col-md-6">
 		<div class="form-group">
 			<label for="" class="control-label">jumlah yang ditarik</label>
-			<input type="text" name="jumlah" class="form-control" required value="<?php echo $pecah['total'] ?>">
+			<input type="number" min="500" max="<?= $jumlahmax ?>" name="jumlah" class="form-control" required value="<?php echo $pecah['total'] ?>">
 		</div>
 	</div>
 
@@ -39,7 +44,7 @@ $iduser = $pecah['iduser']
 
 
 	<div class="col-lg-12 text-right justify-content-center d-flex">
-		<button class="btn btn-primary" name="save">simpan</button>
+		<button class="btn btn-primary" name="save">Tarik</button>
 
 	</div>
 </form>
@@ -72,8 +77,8 @@ if (isset($_POST['save'])) {
 		");
 
 		$koneksi->query("INSERT INTO transactions
-  (phone_number, iduser, idsurvey,  poin, undian, jam, type)
-  VALUES ('$phone_number', '$iduser', 'penarikan', '$jumlahtarik', '', '$bikin', 'withdrawal')
+  (phone_number, iduser,  poin, undian, jam, type)
+  VALUES ('$phone_number', '$iduser', '$jumlahtarik', '', '$bikin', 'withdrawal')
     ");
 
 		if (mysqli_affected_rows($koneksi) > 0) {

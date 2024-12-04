@@ -48,7 +48,7 @@ if ($result->num_rows > 0) {
     }
 
     $stmt1 = $koneksi->prepare(" SELECT u.iduser, u.nohp, u.nama_lengkap, u.kelamin, u.lahir, 
-            u.provinsi, u.kota, u.kecamatan, u.kelurahan, u.kodepos, u.alamat, u.password,
+            u.provinsi, u.kota, u.kecamatan, u.kelurahan, u.kodepos, u.alamat, u.password, u.referrer_code, referral_code,
             COALESCE((SELECT SUM(t.poin) FROM transactions t WHERE t.phone_number = u.nohp ORDER BY t.idhadiah DESC), 0) AS saldo
             FROM user u WHERE u.iduser = ? ");
     $stmt1->bind_param('i', $iduser);

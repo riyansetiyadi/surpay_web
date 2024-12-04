@@ -29,5 +29,5 @@ elseif ($hal == "utama") {
 } elseif ($hal == "logout") {
   include 'logout.php';
 } else {
-  include 'halamanutama.php';
+  include 'utama/utama.php';
 };

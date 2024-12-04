@@ -23,10 +23,11 @@ if (!isset($_SESSION['id'])) {
     <meta name="author" content="" />
     <title>Surpay</title>
     <!-- Favicon-->
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="../images/favicon.ico" />
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="css/styles.css" rel="stylesheet" />
     <link href="css/styles2.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style2.css">
 
     <!-- bikin icon -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />

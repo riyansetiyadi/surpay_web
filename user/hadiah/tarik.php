@@ -5,7 +5,7 @@
   $result = mysqli_query($koneksi, "SELECT * FROM user WHERE iduser = $id");
   $userdata = mysqli_fetch_assoc($result);
 
-  $ambil = $koneksi->query("SELECT phone_number, sum(poin) as total, transactions.iduser, user.nama_lengkap FROM transactions join user on transactions.iduser=user.iduser where phone_number='$userdata[nohp]' group by phone_number ");
+  $ambil = $koneksi->query("SELECT nohp, sum(poin) as total, transactions.iduser, user.nama_lengkap FROM transactions join user on transactions.iduser=user.iduser where phone_number='$userdata[nohp]' group by phone_number ");
   $pecah = $ambil->fetch_assoc()
 
   ?>
@@ -24,7 +24,7 @@
 
          </div>
          <hr>
-         <a href="index.php?halaman=tarikdana&nohp=<?php echo $pecah['phone_number'] ?>" class="btn btn-warning">Tarik Dana</a>
+         <a href="index.php?halaman=tarikdana" class="btn btn-warning">Tarik Dana</a>
 
        </div>
      </div>
