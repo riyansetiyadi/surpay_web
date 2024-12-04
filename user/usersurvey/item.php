@@ -20,7 +20,7 @@
         $idkeyc = $idkey . "c";
         $idkeyd = $idkey . "d";
         ?>
-        <div class="pilihan pb-2">
+        <div class="pilihan pb-2 my-3">
           <div class="title"><?php echo $pecah2['pertanyaan'] ?></div>
           <div class="kodeku mx-3 py-1">
             <input type="radio" name="<?php echo $idkey ?>" id="<?php echo $key ?>" value="<?php echo $pecah2['a'] ?>" required>

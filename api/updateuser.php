@@ -25,7 +25,7 @@ if (preg_match('/^Bearer\s(\S+)$/', $headers['authorization'], $matches)) {
     exit;
 }
 
-$stmt = $koneksi->prepare("SELECT iduser, uniq_code, expire_ucode, referrer_code, nohp FROM user WHERE uniq_code = ?");
+$stmt = $koneksi->prepare("SELECT iduser, uniq_code, expire_ucode, referrer_code, referral_code, nohp FROM user WHERE uniq_code = ?");
 $stmt->bind_param('s', $uniq_code);
 $stmt->execute();
 $result = $stmt->get_result();
@@ -35,6 +35,7 @@ if ($result->num_rows > 0) {
     $iduser = $user_data['iduser'];
     $expire = $user_data['expire_ucode'];
     $referrer_code = $user_data['referrer_code'];
+    $referral_code = $user_data['referral_code'];
     $nohp = $user_data['nohp'];
 
     $current_date = new DateTime();
@@ -51,27 +52,37 @@ if ($result->num_rows > 0) {
 
     $data = json_decode(file_get_contents('php://input'), true);
 
-    if (!$data || !isset($data['nohp'], $data['nama_lengkap'], $data['password'])) {
+    if (!$data || !isset($data['nama_lengkap'], $data['password'])) {
         http_response_code(400);
 
         echo json_encode([
             'error' => true,
-            'message' => 'Data tidak lengkap. Harap isi nohp, nama_lengkap, dan password.'
+            'message' => 'Data tidak lengkap. Harap isi Nama_lengkap, dan password.'
         ]);
         exit;
     }
 
 
-    $nohp = htmlspecialchars($data['nohp']);
     $nama_lengkap = htmlspecialchars($data['nama_lengkap']);
     $password = htmlspecialchars($data['password']);
     $input_referrer_code = !empty($data["referrer_code"]) ? htmlspecialchars($data["referrer_code"]) : null;
 
-    if ($referrer_code !== null) {
+    if ($input_referrer_code !== $referrer_code) {
+        if ($referrer_code !== null && $referrer_code !== '') {
+            http_response_code(400);
+            echo json_encode([
+                'error' => true,
+                'message' => 'Anda sudah mengklaim referral code'
+            ]);
+            exit;
+        }
+    }
+
+    if ($referral_code === $input_referrer_code) {
         http_response_code(400);
         echo json_encode([
             'error' => true,
-            'message' => 'Anda sudah mengklaim referral code'
+            'message' => 'Anda tidak bisa menggunakan referral code sendiri'
         ]);
         exit;
     }
@@ -109,8 +120,8 @@ if ($result->num_rows > 0) {
     }
 
 
-    $stmt1 = $koneksi->prepare("UPDATE user SET nohp = ?, nama_lengkap = ?, password = ? WHERE iduser = ?");
-    $stmt1->bind_param('sssi', $nohp, $nama_lengkap, $password, $iduser);
+    $stmt1 = $koneksi->prepare("UPDATE user SET nama_lengkap = ?, password = ? WHERE iduser = ?");
+    $stmt1->bind_param('ssi', $nama_lengkap, $password, $iduser);
 
     if ($stmt1->execute()) {
         echo json_encode([

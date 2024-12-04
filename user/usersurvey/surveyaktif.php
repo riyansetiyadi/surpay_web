@@ -21,7 +21,7 @@ if (isset($_POST['submit'])) {
   </form>
 </div>
 
-<div class="row mt-3 mx-2">
+<div class="row mt-3 mx-2 my-5">
   <?php while ($pecah = $ambil->fetch_assoc()) { ?>
     <div class="col-xs-4 col-md-4 mb-3">
       <div class="card">
