@@ -48,23 +48,46 @@ if ($result->num_rows > 0) {
         exit;
     }
 
-    $stmt1 = $koneksi->prepare("
-        SELECT * 
-        FROM survey_set AS s
-        WHERE NOT EXISTS (
-            SELECT idsurvey, nama 
-            FROM jawaban AS j
-            WHERE s.id = j.idsurvey 
-            AND iduser = ?
-        ) 
-        AND (
-            SELECT COUNT(DISTINCT j.iduser) 
-            FROM jawaban j 
-            WHERE j.idsurvey = s.id
-        ) < s.limit_respondents
-        ORDER BY s.id DESC
-    ");
-    $stmt1->bind_param('i', $iduser);
+    $key = isset($_GET['q']) ? trim($_GET['q']) : null;
+
+    if ($key) {
+        $stmt1 = $koneksi->prepare("
+            SELECT * 
+            FROM survey_set AS s
+            WHERE s.title LIKE CONCAT('%', ?, '%') 
+            AND NOT EXISTS (
+                SELECT idsurvey, nama 
+                FROM jawaban AS j
+                WHERE s.id = j.idsurvey 
+                AND iduser = ?
+            ) 
+            AND (
+                SELECT COUNT(DISTINCT j.iduser) 
+                FROM jawaban j 
+                WHERE j.idsurvey = s.id
+            ) < s.limit_respondents
+            ORDER BY s.id DESC
+        ");
+        $stmt1->bind_param('si', $key, $iduser);
+    } else {
+        $stmt1 = $koneksi->prepare("
+            SELECT * 
+            FROM survey_set AS s
+            WHERE NOT EXISTS (
+                SELECT idsurvey, nama 
+                FROM jawaban AS j
+                WHERE s.id = j.idsurvey 
+                AND iduser = ?
+            ) 
+            AND (
+                SELECT COUNT(DISTINCT j.iduser) 
+                FROM jawaban j 
+                WHERE j.idsurvey = s.id
+            ) < s.limit_respondents
+            ORDER BY s.id DESC
+        ");
+        $stmt1->bind_param('i', $iduser);
+    }
     $stmt1->execute();
     $hasil = $stmt1->get_result();
     $data = [];
@@ -75,12 +98,11 @@ if ($result->num_rows > 0) {
         }
         echo json_encode([
             "error" => false,
-            "message" => "List survey berhasil diambil",
+            "message" => $key ? "Survey berdasarkan judul berhasil diambil" : "List survey berhasil diambil",
             "data" => $data
         ]);
     } else {
         http_response_code(400);
-
         echo json_encode([
             "error" => false,
             "message" => "Data tidak ditemukan",

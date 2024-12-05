@@ -15,7 +15,7 @@ if ($getUser->num_rows > 0) {
 
     $uniq_id = $hasil['iduser'] . date('s') . substr(str_shuffle($characters), 0, 3) . date('d') . substr(str_shuffle($characters), 0, 2) . date('mY') . substr(str_shuffle($characters), 0, 3) . date('Ymd');
 
-    $expire_ucode = date('Y-m-d H:i:s', strtotime('+1 day'));
+    $expire_ucode = date('Y-m-d H:i:s', strtotime('+1 year'));
 
     $stmt = $koneksi->prepare("UPDATE user SET uniq_code = ?, expire_ucode = ? WHERE iduser = ?");
     $stmt->bind_param('ssi', $uniq_id, $expire_ucode, $hasil['iduser']);
