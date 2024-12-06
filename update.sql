@@ -7,3 +7,4 @@ ALTER TABLE `transactions` CHANGE `nama` `phone_number` VARCHAR(50) CHARACTER SE
 ALTER TABLE `transactions` ADD `type` VARCHAR(50) NULL DEFAULT NULL AFTER `bukti`;
 ALTER TABLE `user` ADD `referral_code` VARCHAR(100) NULL DEFAULT NULL AFTER `alamat`;
 ALTER TABLE `user` ADD `referrer_code` VARCHAR(100) NULL DEFAULT NULL AFTER `referral_code`;
+ALTER TABLE `survey_set` ADD `status` VARCHAR(35) NOT NULL DEFAULT 'unpublish' AFTER `date_created`;
